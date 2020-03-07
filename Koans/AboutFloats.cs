@@ -10,7 +10,7 @@ namespace DotNetCoreKoans.Koans
         {
             var f = 1f;
 
-            Assert.Equal(typeof(FillMeIn), f.GetType());
+            Assert.Equal(typeof(float), f.GetType());
         }
 
         [Step(2)]
@@ -18,7 +18,7 @@ namespace DotNetCoreKoans.Koans
         {
             float f = 1.5f;
 
-            Assert.Equal(f, FILL_ME_IN);
+            Assert.Equal(f, 1.5);
 
             //Floating Point numbers are able to keep data beyond the decimal point
             //unlike Integers which are whole numbers.
@@ -29,7 +29,7 @@ namespace DotNetCoreKoans.Koans
         [Step(3)]
         public void FloatsAreSingles()
         {
-            Assert.Equal(typeof(float), typeof(FillMeIn));
+            Assert.Equal(typeof(float), typeof(System.Single));
             
             //.NET Core doesn't have a type called `float`
             //Instead, it has a "Single Precision Floating Point Number" type:
@@ -44,7 +44,7 @@ namespace DotNetCoreKoans.Koans
             var result = 1 * 2f; //One's an integer, one's a float (even though it's a whole number)!
 
             //what will the result type be?
-            Assert.Equal(typeof(FillMeIn), result.GetType());
+            Assert.Equal(typeof(float), result.GetType());
 
             //.NET Core kindly stores the result of the math in a float
             //so you don't lose the extra information in your floating point value

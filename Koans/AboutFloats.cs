@@ -53,14 +53,14 @@ namespace DotNetCoreKoans.Koans
         [Step(5)]
         public void FloatsHaveLimitedMaximumAndMinimumValues()
         {
-            Assert.Equal(FILL_ME_IN, 3.40282347E+38f);
-            Assert.Equal(FILL_ME_IN, -3.40282347E+38f);
+            Assert.Equal(float.MaxValue, 3.40282347E+38f);
+            Assert.Equal(float.MinValue, -3.40282347E+38f);
         }
 
         [Step(6)]
         public void ValueLargerThanTheMaximumFloatThrows()
         {
-            Assert.Throws(typeof(FillMeIn), () =>
+            Assert.Throws(typeof(System.OverflowException), () =>
             {
                 var f = float.Parse("3.5E+38");
             });
@@ -72,8 +72,8 @@ namespace DotNetCoreKoans.Koans
             var sevenDigits = 0.9999999f;
             var eightDigits = 0.99999999f;
         
-            Assert.Equal(sevenDigits, FILL_ME_IN);
-            Assert.Equal(eightDigits, FILL_ME_IN);
+            Assert.Equal(sevenDigits, 0.9999999f);
+            Assert.Equal(eightDigits, 1);
 
             //Remember how floats are "Single Precision"?
             //What does that actually mean?
@@ -98,7 +98,7 @@ namespace DotNetCoreKoans.Koans
         {
             var f = 0.3f + 0.6f;
 
-            Assert.True(f == 0.9f);
+            Assert.False(f == 0.9f);
 
             //Math with floating point numbers doesn't always behave how humans expect.
             //This is because floating point numbers are stored in binary,

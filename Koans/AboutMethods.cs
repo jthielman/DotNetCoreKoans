@@ -40,19 +40,19 @@ namespace DotNetCoreKoans.Koans
         [Step(1)]
         public void ExtensionMethodsShowUpInTheCurrentClass()
         {
-            Assert.Equal(FILL_ME_IN, this.HelloWorld());
+            Assert.Equal("Hello!", this.HelloWorld());
         }
 
         [Step(2)]
         public void ExtensionMethodsWithParameters()
         {
-            Assert.Equal(FILL_ME_IN, this.SayHello("Cory"));
+            Assert.Equal("Hello, Cory!", this.SayHello("Cory"));
         }
 
         [Step(3)]
         public void ExtensionMethodsWithVariableParameters()
         {
-            Assert.Equal(FILL_ME_IN, this.MethodWithVariableArguments("Cory", "Will", "Corey"));
+            Assert.Equal(new string[] { "Cory", "Will", "Corey" }, this.MethodWithVariableArguments("Cory", "Will", "Corey"));
         }
 
         //Extension methods can extend any class by referencing 
@@ -62,7 +62,7 @@ namespace DotNetCoreKoans.Koans
         [Step(4)]
         public void ExtendingCoreClasses()
         {
-            Assert.Equal(FILL_ME_IN, "Cory".SayHi());
+            Assert.Equal("Hi, Cory", "Cory".SayHi());
         }
 
         //Of course, any of the parameter things you can do with 
@@ -76,7 +76,7 @@ namespace DotNetCoreKoans.Koans
         [Step(5)]
         public void LocalMethodsWithVariableParams()
         {
-            Assert.Equal(FILL_ME_IN, this.LocalMethodWithVariableParameters("Cory", "Will", "Corey"));
+            Assert.Equal(new string[] { "Cory", "Will", "Corey" }, this.LocalMethodWithVariableParameters("Cory", "Will", "Corey"));
         }
 
         //Note how we called the method by saying "this.LocalMethodWithVariableParameters"
